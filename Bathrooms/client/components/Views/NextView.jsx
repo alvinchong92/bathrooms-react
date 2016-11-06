@@ -1,7 +1,8 @@
 import React from 'react';
-import {withRouter} from 'react-router'
+import {withRouter} from 'react-router';
+import Map from '../map/map.jsx';
 
- class FrontView extends React.Component {
+ class NextView extends React.Component {
   constructor(props){
     super(props)
 
@@ -9,17 +10,18 @@ import {withRouter} from 'react-router'
 
     }
   handleSubmit() {
-    this.props.router.push('NextView')
+    this.props.router.push('ThirdView')
   }
 
   render() {
     return(
       <div>
-        <h1> This is the first View </h1>
+        <h1> Great this is the 2nd View </h1>
+        <Map />
         <button onClick={this.handleSubmit}> Click </button>
       </div>
     )
   }
 }
 
-export default withRouter(FrontView);
+export default withRouter(NextView);

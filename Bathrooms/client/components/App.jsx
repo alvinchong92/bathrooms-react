@@ -1,6 +1,7 @@
  import React from 'react';
  import request from 'superagent';
  import cookie from 'react-cookie';
+ import FrontView from './Views/FrontView.jsx';
  import UserForm from './user/UserForm.jsx';
  import Map from './map/map.jsx';
  import PostForm from './posts/PostForm.jsx';
@@ -141,12 +142,7 @@
        userDisplayElement = (
          <div>
            <button id="Log-Out" onClick={this.signOut} >Log-Out!</button>
-           <Map x={this.state.x}/>
-           <div>
-           <PostForm sendPost={this.sendPost} deletePost={this.deletePost}/>
-           <div id="title_display"> Places to Poop </div>
-           <PostList posts={this.state.posts} deletePost={this.deletePost} x={this.state.x} />
-           </div>
+           <FrontView />
            <footer className="footer"> </footer>
          </div>
        );
