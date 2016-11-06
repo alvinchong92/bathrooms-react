@@ -1,0 +1,332 @@
+{
+  "meta" : {
+    "view" : {
+      "id" : "h87e-shkn",
+      "name" : "bathrooms",
+      "attribution" : "Department of Parks and Recreation (DPR)",
+      "averageRating" : 0,
+      "category" : "Recreation",
+      "createdAt" : 1347214294,
+      "description" : "Recreational facilities in New York City Department of Parks & Recreation properties that are accessible to the disabled.",
+      "displayType" : "table",
+      "downloadCount" : 100,
+      "hideFromCatalog" : false,
+      "hideFromDataJson" : false,
+      "indexUpdatedAt" : 1427848248,
+      "newBackend" : false,
+      "numberOfComments" : 0,
+      "oid" : 4208979,
+      "publicationAppendEnabled" : false,
+      "publicationDate" : 1372267159,
+      "publicationGroup" : 244059,
+      "publicationStage" : "published",
+      "rowsUpdatedAt" : 1372267157,
+      "rowsUpdatedBy" : "uurm-7z6x",
+      "searchString" : "bathrooms",
+      "tableId" : 942528,
+      "totalTimesRated" : 0,
+      "viewCount" : 440,
+      "viewLastModified" : 1409940362,
+      "viewType" : "tabular",
+      "columns" : [ {
+        "id" : -1,
+        "name" : "sid",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":sid",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { }
+      }, {
+        "id" : -1,
+        "name" : "id",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":id",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { }
+      }, {
+        "id" : -1,
+        "name" : "position",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":position",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { }
+      }, {
+        "id" : -1,
+        "name" : "created_at",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":created_at",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { }
+      }, {
+        "id" : -1,
+        "name" : "created_meta",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":created_meta",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { }
+      }, {
+        "id" : -1,
+        "name" : "updated_at",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":updated_at",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { }
+      }, {
+        "id" : -1,
+        "name" : "updated_meta",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":updated_meta",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { }
+      }, {
+        "id" : -1,
+        "name" : "meta",
+        "dataTypeName" : "meta_data",
+        "fieldName" : ":meta",
+        "position" : 0,
+        "renderTypeName" : "meta_data",
+        "format" : { }
+      }, {
+        "id" : 77014548,
+        "name" : "Name",
+        "dataTypeName" : "text",
+        "fieldName" : "name",
+        "position" : 1,
+        "renderTypeName" : "text",
+        "tableColumnId" : 1563759,
+        "width" : 245,
+        "cachedContents" : {
+          "non_null" : 92,
+          "largest" : "Yak Playground",
+          "null" : 0,
+          "top" : [ {
+            "item" : "Coney Island Beach",
+            "count" : 20
+          }, {
+            "item" : "Coney Island",
+            "count" : 19
+          }, {
+            "item" : "Rockaway Beach 86 Comfort Station",
+            "count" : 18
+          }, {
+            "item" : "Rockaway Beach 97 Comfort Station",
+            "count" : 17
+          }, {
+            "item" : "Rockaway Beach 106 Comfort Station",
+            "count" : 16
+          }, {
+            "item" : "Rockaway Beach 117th L/G",
+            "count" : 15
+          }, {
+            "item" : "Bloomingdale Park",
+            "count" : 14
+          }, {
+            "item" : "Conference House Park",
+            "count" : 13
+          }, {
+            "item" : "South Beach Wetlands",
+            "count" : 12
+          } ],
+          "smallest" : "Albert J. Parham Playground"
+        },
+        "format" : { }
+      }, {
+        "id" : 77014549,
+        "name" : "Location",
+        "dataTypeName" : "text",
+        "fieldName" : "location",
+        "position" : 2,
+        "renderTypeName" : "text",
+        "tableColumnId" : 1563760,
+        "width" : 320,
+        "cachedContents" : {
+          "non_null" : 91,
+          "largest" : "Willowbrook Parkway, Forest Avenue & Houston Street",
+          "null" : 1,
+          "top" : [ {
+            "item" : "Rockland, Manor and Brielle avenues, Forest Hill Road",
+            "count" : 20
+          }, {
+            "item" : "Natural Area and Boardwalk from Sands Lane to Vulcan Street, East of Father Capodanno Boulevard",
+            "count" : 19
+          }, {
+            "item" : "Beach 86 Street",
+            "count" : 18
+          }, {
+            "item" : "Beach 97 Street",
+            "count" : 17
+          }, {
+            "item" : "Beach 106 Street",
+            "count" : 16
+          }, {
+            "item" : "Beach 117 Street",
+            "count" : 15
+          }, {
+            "item" : "Richmond Pkwy, Bloomingdale Rd., Lenevar Ave",
+            "count" : 14
+          }, {
+            "item" : "Pittsville St,Hylan Blvd.,Surf,Richard Aves",
+            "count" : 13
+          }, {
+            "item" : "Quintard St Bet. Quincy Ave & Father Capodanno Blvd",
+            "count" : 12
+          } ],
+          "smallest" : "100th Street and Fifth Ave"
+        },
+        "format" : { }
+      }, {
+        "id" : 77014550,
+        "name" : "Type",
+        "dataTypeName" : "text",
+        "fieldName" : "type",
+        "position" : 3,
+        "renderTypeName" : "text",
+        "tableColumnId" : 1563761,
+        "width" : 148,
+        "cachedContents" : {
+          "non_null" : 92,
+          "largest" : "Bathrooms",
+          "null" : 0,
+          "top" : [ {
+            "item" : "Bathrooms",
+            "count" : 20
+          } ],
+          "smallest" : "Bathrooms"
+        },
+        "format" : { }
+      } ],
+      "grants" : [ {
+        "inherited" : true,
+        "type" : "viewer",
+        "flags" : [ "public" ]
+      } ],
+      "metadata" : {
+        "custom_fields" : {
+          "Dataset Information" : {
+            "Agency" : "Department of Parks and Recreation (DPR)"
+          }
+        },
+        "renderTypeConfig" : {
+          "visible" : {
+            "table" : true
+          }
+        },
+        "availableDisplayTypes" : [ "table", "fatrow", "page" ]
+      },
+      "owner" : {
+        "id" : "52vf-ecev",
+        "displayName" : "Kristin Scott",
+        "screenName" : "Kristin Scott"
+      },
+      "query" : { },
+      "rights" : [ "read" ],
+      "tableAuthor" : {
+        "id" : "5fuc-pqz2",
+        "displayName" : "NYC OpenData",
+        "roleName" : "administrator",
+        "screenName" : "NYC OpenData",
+        "rights" : [ "create_datasets", "edit_others_datasets", "edit_sdp", "edit_site_theme", "moderate_comments", "manage_users", "chown_datasets", "edit_nominations", "approve_nominations", "feature_items", "federations", "manage_stories", "manage_approval", "change_configurations", "view_domain", "view_others_datasets", "edit_pages", "create_pages", "view_goals", "view_dashboards", "edit_goals", "edit_dashboards", "create_dashboards", "manage_provenance", "create_story", "edit_story_title_desc", "create_story_copy", "delete_story", "manage_story_collaborators", "manage_story_visibility", "manage_story_public_version", "edit_story", "view_unpublished_story", "view_story", "view_all_dataset_status_logs", "use_data_connectors" ]
+      },
+      "tags" : [ "park", "parks", "nature", "recreation", "disability", "disabled", "accessible", "handicap", "handicap able" ]
+    }
+  },
+  "data" : [ [ 613, "793DA8C2-BC32-4D2E-8CF7-8458444B30E9", 613, 1318077760, "392904", 1318077760, "392904", "{\n}", "Arcilla Playground", "Teller Avenue, Park Avenue, Clay Avenue, East 64 Street", "Bathrooms" ]
+, [ 614, "BCE84416-988C-4AC1-9B6F-2CC8E773EA37", 614, 1318077760, "392904", 1318077760, "392904", "{\n}", "Behagen Playground", "Tinton Avenue, East 165 Street, Union Avenue, East 166 Street", "Bathrooms" ]
+, [ 615, "1F6C82A4-12F3-4152-8DA4-065170B8511B", 615, 1318077760, "392904", 1318077760, "392904", "{\n}", "Belmont Playground", "Crotona Avenue, East 181 Street", "Bathrooms" ]
+, [ 616, "091868E3-BF88-4779-BF0F-D885FD21FA0D", 616, 1318077760, "392904", 1318077760, "392904", "{\n}", "Capt. Rivera Playground", "East 156 Street, Forest Avenue", "Bathrooms" ]
+, [ 617, "EBD81270-6E34-4F7B-8837-C426CF0451FB", 617, 1318077760, "392904", 1318077760, "392904", "{\n}", "Clark Playground", "3 Avenue, East 144 Street, East 146 Street", "Bathrooms" ]
+, [ 618, "1C479B7E-657B-4D91-BFFB-ED53F82C3E0C", 618, 1318077760, "392904", 1318077760, "392904", "{\n}", "Crotona Park (Pool House)", " 173rd Street and Fulton Avenue", "Bathrooms" ]
+, [ 619, "45A9922E-4CA7-4159-A277-32D3849FD734", 619, 1318077760, "392904", 1318077760, "392904", "{\n}", "Franz Sigel Park", "East 153 Street, Gerard Avenue, East 151 Street, Walton Avenue", "Bathrooms" ]
+, [ 620, "A1DB9A0A-52E2-445D-8C32-BB323EF9B0A5", 620, 1318077760, "392904", 1318077760, "392904", "{\n}", "Magenta Playground", "Olinville Avenue, Rosewood Street", "Bathrooms" ]
+, [ 621, "4C7D0422-851E-4FA5-84D3-59C6D8204041", 621, 1318077760, "392904", 1318077760, "392904", "{\n}", "Mathew Muliner Playground", "Delancy Place, Muliner Avenue, Matthews Avenue", "Bathrooms" ]
+, [ 622, "61C3EE90-30A3-4B73-B63B-CAEA3BE8C77C", 622, 1318077760, "392904", 1318077760, "392904", "{\n}", "Millbrook Playground", "East 135 Street, Cypress Avenue", "Bathrooms" ]
+, [ 623, "BAAD90DC-B5F1-4E5B-8831-D87F77F6CACA", 623, 1318077760, "392904", 1318077760, "392904", "{\n}", "Orchard Beach Pavilion", "Bruckner Boulevard, Eastchester Bay, Hutchinson", "Bathrooms" ]
+, [ 624, "AE8B1F49-F21A-4058-AF95-DAAE57783042", 624, 1318077760, "392904", 1318077760, "392904", "{\n}", "Parkside Playground", "Arnow Avenue, Adee Avenue, Olinville Avenue", "Bathrooms" ]
+, [ 625, "459915C4-A82F-4B38-A594-F916A92651CB", 625, 1318077760, "392904", 1318077760, "392904", "{\n}", "Pelham Bay Park (Hunter Island Picnic Area)", "Bruckner Boulevard, Eastchester Bay, Hutchinson", "Bathrooms" ]
+, [ 626, "35BD6D25-6DDB-4DEA-BA10-246D097C61EB", 626, 1318077760, "392904", 1318077760, "392904", "{\n}", "Pelham Bay Park (Playground for All Children)", "Bruckner Expressway & Buhre Avenue", "Bathrooms" ]
+, [ 627, "F678CAE5-252E-4711-ABED-C281A4FF1430", 627, 1318077760, "392904", 1318077760, "392904", "{\n}", "Quarry Ballfields", "Quarry Road, East 181 Street, Oak Place & Hughes Avenue", "Bathrooms" ]
+, [ 628, "E04608A0-9265-475A-A450-F4F5340C8DC8", 628, 1318077760, "392904", 1318077760, "392904", "{\n}", "Richman (Echo) Park Playground", "East 178 Street & Ryer Avenue, Upper Level", "Bathrooms" ]
+, [ 629, "7C877AF6-D525-41B6-B55E-16746F2B32E4", 629, 1318077760, "392904", 1318077760, "392904", "{\n}", "Riverbend Playground", "Bailey Avenue, West Kingsbridge Road", "Bathrooms" ]
+, [ 630, "BFE295A5-7B56-4B7A-9BA5-94CD2CED218D", 630, 1318077760, "392904", 1318077760, "392904", "{\n}", "St. Mary's Playground East Playground", "Jackson Avenue between East 144 and 145 streets", "Bathrooms" ]
+, [ 631, "E9DB6ED8-13BE-4A53-BDB6-4038D19CB97C", 631, 1318077760, "392904", 1318077760, "392904", "{\n}", "Vidalia Park", "Vyse & Daly avenues between West 179-180 streets", "Bathrooms" ]
+, [ 632, "FBE77B04-5D46-4C0A-95C7-799B8A0AB27A", 632, 1318077760, "392904", 1318077760, "392904", "{\n}", "Albert J. Parham Playground", "Adelphi Street, Clermont, DeKalb & Willoughby avenues", "Bathrooms" ]
+, [ 633, "578173BE-1091-424C-A9C8-ABF46CE95B64", 633, 1318077760, "392904", 1318077760, "392904", "{\n}", "Carroll Park", "Court & Smith Streets", "Bathrooms" ]
+, [ 634, "D5697880-A1CB-4D03-9C6E-5B44C3B846D2", 634, 1318077760, "392904", 1318077760, "392904", "{\n}", "Coney Island Beach", "Stillwell Avenue", "Bathrooms" ]
+, [ 635, "AD0A653F-A685-4518-A895-066E5E1E9A07", 635, 1318077760, "392904", 1318077760, "392904", "{\n}", "Coney Island Beach", "West 16th Street", "Bathrooms" ]
+, [ 636, "2190DA18-D54C-4F35-910B-9BF3238E4701", 636, 1318077760, "392904", 1318077760, "392904", "{\n}", "Coney Island Beach", "W 22 ST.", "Bathrooms" ]
+, [ 637, "C1C5242D-E564-4EEA-98BC-C52A7E5D05BE", 637, 1318077760, "392904", 1318077760, "392904", "{\n}", "Fort Greene Playground", "Myrtle Avenue & St. Edwards Plaza", "Bathrooms" ]
+, [ 638, "E564B492-A513-4AD5-B4DD-865E3AB2FA74", 638, 1318077760, "392904", 1318077760, "392904", "{\n}", "Fox Playground", "Avenue H, East 54 to E 55 streets", "Bathrooms" ]
+, [ 639, "F6A7BD4B-8F96-4022-BEAC-E4DFBEDECBDD", 639, 1318077760, "392904", 1318077760, "392904", "{\n}", "Glenwood Playground", "Ralph Avenue & Farragut Road", "Bathrooms" ]
+, [ 640, "436CA656-4F53-4889-B500-9D6DC3C70439", 640, 1318077760, "392904", 1318077760, "392904", "{\n}", "Jesse Owens Playground", "Stuyvesant & Lafayette avenues", "Bathrooms" ]
+, [ 641, "8E135A9A-E886-4109-91E5-A745A51B5CDA", 641, 1318077760, "392904", 1318077760, "392904", "{\n}", "Prospect Park (Middle Long Meadow)", "Picnic House", "Bathrooms" ]
+, [ 642, "374F4BE3-557A-47EE-AC78-CCAB6342B2A2", 642, 1318077760, "392904", 1318077760, "392904", "{\n}", "Prospect Park (The Bandshell)", "Prospect Park West/7th Street/15th Street", "Bathrooms" ]
+, [ 643, "C088B7B2-3FA8-4C9F-8020-CFACA7B657B4", 643, 1318077760, "392904", 1318077760, "392904", "{\n}", "PS 286 Playground", "Avenue Y, between Brown & Haring streets", "Bathrooms" ]
+, [ 644, "302B236C-F5B2-4093-B425-B83AE6BE6FFC", 644, 1318077760, "392904", 1318077760, "392904", "{\n}", "Sternberg Park", "Montrose Avenue, Boerum, Lorimer, Leonard streets", "Bathrooms" ]
+, [ 645, "7C9A7A2F-5D8A-422E-8A25-CEC4A5EF321E", 645, 1318077760, "392904", 1318077760, "392904", "{\n}", "Tiger Playground", "Evergreen Avenue & Eldert Street", "Bathrooms" ]
+, [ 646, "993E06E1-4CCC-4942-8713-4632252ADEF7", 646, 1318077760, "392904", 1318077760, "392904", "{\n}", "Underwood Park", "Lafayette & Waverly avenues", "Bathrooms" ]
+, [ 647, "24500776-9E96-4EEC-832C-E3BF8F6E6F73", 647, 1318077760, "392904", 1318077760, "392904", "{\n}", "Washington Hall Playground", "Park, Washington avenues to Hall Street", "Bathrooms" ]
+, [ 648, "FBA3EFC3-0C0E-48B4-9458-2AD1B79712B5", 648, 1318077760, "392904", 1318077760, "392904", "{\n}", "Yak Playground", "Avenue Y between Coyle & Batchelder streets", "Bathrooms" ]
+, [ 649, "0238092D-63CE-494C-87DB-A4BDE29DE02B", 649, 1318077760, "392904", 1318077760, "392904", "{\n}", "Carl Schurz Park", "East 84 Street & East End Avenue", "Bathrooms" ]
+, [ 650, "10D6BB4B-D5CA-4452-9074-073D5BB23146", 650, 1318077760, "392904", 1318077760, "392904", "{\n}", "Central Park (Dana Discovery Center)", "110th Street between Fifth Avenue and Malcolm X Boulevard", "Bathrooms" ]
+, [ 651, "B7BA5FD6-9159-4F9B-806D-700C874718EB", 651, 1318077760, "392904", 1318077760, "392904", "{\n}", "Central Park Delacorte Comfort Station", "Mid-Park at 80th Street", "Bathrooms" ]
+, [ 652, "617A5908-29C6-46BD-8FF3-F4E3F61E501D", 652, 1318077760, "392904", 1318077760, "392904", "{\n}", "Central Park (Lasker)", "Central Park at 107th Street", "Bathrooms" ]
+, [ 653, "35C9FF8E-D855-4F98-8C1E-7D4E38E6AB2D", 653, 1318077760, "392904", 1318077760, "392904", "{\n}", "Central Park (North Meadow Recreation Center)", "Mid-park at 97th Street", "Bathrooms" ]
+, [ 654, "7C43D259-2FA1-48A1-8AF6-6515B1C59BAC", 654, 1318077760, "392904", 1318077760, "392904", "{\n}", "Central Park (Wollman Rink)", "Center Drive to East Drive (including Gapstow Bridge)", "Bathrooms" ]
+, [ 655, "7D8B06DE-2E79-4FA0-8CAA-E5F5848BF8EA", 655, 1318077760, "392904", 1318077760, "392904", "{\n}", "Chelsea Recreation Center", "South of West 25 Street, 9 to 10 avenues", "Bathrooms" ]
+, [ 656, "805EA78B-A3FC-4696-AD67-946CDA5B2C0A", 656, 1318077760, "392904", 1318077760, "392904", "{\n}", "Columbus Park", "Baxter, Mulberry, Bayard & Worth streets", "Bathrooms" ]
+, [ 657, "0AB1593F-DDB8-4899-8153-3EC504898C58", 657, 1318077760, "392904", 1318077760, "392904", "{\n}", "Fort Tryon Park (Anne Loftus Playground)", "Broadway & Dyckman Street", "Bathrooms" ]
+, [ 658, "4E4E4A6D-BE3C-4796-9D0C-610FBB8B86FB", 658, 1318077760, "392904", 1318077760, "392904", "{\n}", "Fort Washington Park (Lily Brown Playground)", "West 162 Street, east of Riverside Drive", "Bathrooms" ]
+, [ 659, "9DB7A632-BFEF-4727-A4B4-A9FB5814C441", 659, 1318077760, "392904", 1318077760, "392904", "{\n}", "Hamilton Fish Park (Recreation Center)", "Between East Houston & Stanton streets", "Bathrooms" ]
+, [ 660, "49B53856-6E49-481A-AA8E-2010DB10A92B", 660, 1318077760, "392904", 1318077760, "392904", "{\n}", "J. Hood Wright Park", "Ft. Washington & Haven avenues, West 173 Street", "Bathrooms" ]
+, [ 661, "887AAE92-7ED4-4BA1-A64F-50D4E81063E9", 661, 1318077760, "392904", 1318077760, "392904", "{\n}", "Jackie Robinson Park (Recreation Center)", "Bradhurst & Edgecombe avenues,West 145 to West 155 streets", "Bathrooms" ]
+, [ 662, "4639621B-2183-467D-B1F4-14F6AE3B114D", 662, 1318077760, "392904", 1318077760, "392904", "{\n}", "Morningside Park", "West 123 Street & Morningside Avenue", "Bathrooms" ]
+, [ 663, "BEB29493-B3AE-4AE9-99F9-A1740F09E243", 663, 1318077760, "392904", 1318077760, "392904", "{\n}", "Riverside Park (Café)", "105th Street, next to Henry Hudson Parkway", "Bathrooms" ]
+, [ 664, "543D5FC0-6788-4560-9538-BE82D4C6B6F0", 664, 1318077760, "392904", 1318077760, "392904", "{\n}", "Sara D. Roosevelt Park", "East Houston Street to Canal Street", "Bathrooms" ]
+, [ 665, "D7FA1F6B-86D9-4076-85B1-AABDBF99216E", 665, 1318077760, "392904", 1318077760, "392904", "{\n}", "Vesuvio Playground", "Spring & Thompson streets", "Bathrooms" ]
+, [ 666, "1E4E5762-DFDA-4142-A659-1745BF0281D4", 666, 1318077760, "392904", 1318077760, "392904", "{\n}", "Bayside Fields", "204 Street & 29 Avenue, Clearview Expressway", "Bathrooms" ]
+, [ 667, "6B08B5D5-534F-4E3D-B70F-C3EA18A82BF2", 667, 1318077760, "392904", 1318077760, "392904", "{\n}", "Cunningham Park (HQ8)", "South of Union Turnpike, between Francis Lewis Boulevard & 193rd Street", "Bathrooms" ]
+, [ 668, "83CD49D1-8ABF-4EF5-9378-3F0BB94CD70B", 668, 1318077760, "392904", 1318077760, "392904", "{\n}", "Flushing Meadows Corona Park (Passerelle)", "Unisphere Fountain to pool, at Meridian Road", "Bathrooms" ]
+, [ 669, "2E62976F-3C59-4822-87C3-E72A191C0FCA", 669, 1318077760, "392904", 1318077760, "392904", "{\n}", "Flushing Meadows Corona Park (Playground for All Children) ", "111 Street and Corona Avenue", "Bathrooms" ]
+, [ 670, "F725D3CC-727A-406F-ABFF-549C3A7B49DC", 670, 1318077760, "392904", 1318077760, "392904", "{\n}", "Flushing Meadows Corona Park (Zoo, Ballfields)", "Grand Central Parkway to 111th Street to Heckscher Children Farm to Playground for All Children", "Bathrooms" ]
+, [ 671, "F1BD2CE3-3045-44C4-A57C-E8C524676755", 671, 1318077760, "392904", 1318077760, "392904", "{\n}", "Juniper Valley Park", "Lutheran Avenue; North and South Juniper boulevards; and the pathway from 76th Street on north end to 75th Street on south end", "Bathrooms" ]
+, [ 672, "493CE95C-D452-46D5-A063-9A36DEAD84BE", 672, 1318077760, "392904", 1318077760, "392904", "{\n}", "Lawerence Virgilio Playground", "39 Drive & 54 Street", "Bathrooms" ]
+, [ 673, "D8D8ECE5-456D-4B54-9ECE-4069A1ACADE4", 673, 1318077760, "392904", 1318077760, "392904", "{\n}", "Michaelis-Bayswater Park", "Beach Channel Drive, B 32 Street, Dwight Avenue, Norton Avenue", "Bathrooms" ]
+, [ 674, "BDBF4844-7D8D-4680-94F0-5E34B26FF48F", 674, 1318077760, "392904", 1318077760, "392904", "{\n}", "Arrochar Playground", "Sand Lane, Major Avenue, McFarland Avenue", "Bathrooms" ]
+, [ 675, "A0CE03CC-39DA-4F95-83D1-9C966298AEC8", 675, 1318077760, "392904", 1318077760, "392904", "{\n}", "Blood Root Valley (Greenbelt Nature Center)", "Rockland, Manor and Brielle avenues, Forest Hill Road", "Bathrooms" ]
+, [ 676, "B6D3F275-C1DA-4F0C-8030-9069EFF19258", 676, 1318077760, "392904", 1318077760, "392904", "{\n}", "Blood Root Valley (Park House)", "Rockland, Manor and Brielle avenues, Forest Hill Road", "Bathrooms" ]
+, [ 677, "418DE4BD-5FD1-43DB-83E0-33989F5AA0A9", 677, 1318077760, "392904", 1318077760, "392904", "{\n}", "Blue Heron Park Preserve (Nature Center)", "Poillon Avenue", "Bathrooms" ]
+, [ 678, "05478ED9-5C03-42C6-B24D-9D404554EC02", 678, 1318077760, "392904", 1318077760, "392904", "{\n}", "Corporal Thompson Park/West Brighton Pool", "Broadway, Henderson Avenue", "Bathrooms" ]
+, [ 679, "7AA4F36E-7473-4CD3-8CE3-89C714ABA916", 679, 1318077760, "392904", 1318077760, "392904", "{\n}", "Double Nickel Playground", "Osborne Street and Preston Avenue", "Bathrooms" ]
+, [ 680, "332A86DD-951B-4168-AB4C-31D829246D82", 680, 1318077760, "392904", 1318077760, "392904", "{\n}", "Grandview Playground", "Grandview Avenue, Continental Place", "Bathrooms" ]
+, [ 681, "3E2DC588-871E-44B8-A6DD-5A434D1CE6E2", 681, 1318077760, "392904", 1318077760, "392904", "{\n}", "High Rock Park (McArthur Park)", "Richmond Parkway & Moravian Cemetery at Rockland Avenue", "Bathrooms" ]
+, [ 682, "C19774F8-829E-4608-8BF8-50B4E9FD8FC6", 682, 1318077760, "392904", 1318077760, "392904", "{\n}", "Joline Pool Playground (Modular Equipment)", "Joline Avenue, Hylan Boulevard", "Bathrooms" ]
+, [ 683, "90A378AF-261C-4C0A-81C5-1340CE6B158E", 683, 1318077760, "392904", 1318077760, "392904", "{\n}", "Lyons Pool", "Pier 6, Victory Boulevard", "Bathrooms" ]
+, [ 684, "26EC0750-5790-4A3D-8227-EFC0859B4827", 684, 1318077760, "392904", 1318077760, "392904", "{\n}", "Markham Playground", "Willowbrook Parkway, Forest Avenue & Houston Street", "Bathrooms" ]
+, [ 685, "D6F0CA60-6905-4248-938B-9023688020FC", 685, 1318077760, "392904", 1318077760, "392904", "{\n}", "Midland Beach & Boardwalk", "Natural Area and Boardwalk from Sands Lane to Vulcan Street, East of Father Capodanno Boulevard", "Bathrooms" ]
+, [ 686, "F33B8740-697B-49AE-9018-14A0CFA1AE43", 686, 1318077760, "392904", 1318077760, "392904", "{\n}", "Midland Field", "Midland Avenue & Mason Avenue", "Bathrooms" ]
+, [ 687, "DF8AF233-9B2C-46DD-B671-F61A781E87AE", 687, 1318077760, "392904", 1318077760, "392904", "{\n}", "South Beach (Saturn Playground)", "Natural Area and Boardwalk from Sands Lane to Vulcan Street, East of Father Capodanno Boulevard", "Bathrooms" ]
+, [ 688, "517C2140-C706-468C-A304-92EDCB4BA65D", 688, 1318077760, "392904", 1318077760, "392904", "{\n}", "Stapleton Playground", "Tompkins Avenue & Broad Street", "Bathrooms" ]
+, [ 689, "CEBB57CD-A0FC-416C-A380-AB90E33F9FCA", 689, 1318077760, "392904", 1318077760, "392904", "{\n}", "Terrace Playground", "Howard Avenue & Martha Street", "Bathrooms" ]
+, [ 690, "D1880D16-6235-4EFA-8549-CF7DC44644B2", 690, 1318077760, "392904", 1318077760, "392904", "{\n}", "Todt Hill Playground", "Schmidts Lane & Manor Road", "Bathrooms" ]
+, [ 691, "E93CF932-3CB7-46AD-9C49-759BFAF18A28", 691, 1318077760, "392904", 1318077760, "392904", "{\n}", "Coney Island", "Brighton 2nd", "Bathrooms" ]
+, [ 692, "03052BE1-F39D-4A6A-8946-07B5DE44852D", 692, 1318077760, "392904", 1318077760, "392904", "{\n}", "Coney Island", "W 27 ST.", "Bathrooms" ]
+, [ 693, "4273B31E-7114-482F-A586-42EE1DAA5854", 693, 1318077760, "392904", 1318077760, "392904", "{\n}", "Coney Island", "W 33 St.", "Bathrooms" ]
+, [ 694, "2AE72AE5-B772-41D0-B001-BD3E1A7AF1CE", 694, 1318077760, "392904", 1318077760, "392904", "{\n}", "Marine Park Nature Center", "East 33rd Street and Avenue U", "Bathrooms" ]
+, [ 695, "A29722F0-B426-4A87-8F25-88CCC3FB301A", 695, 1318077760, "392904", 1318077760, "392904", "{\n}", "Bendheim Playground", "100th Street and Fifth Ave", "Bathrooms" ]
+, [ 696, "4AA9D33B-5258-4AF4-94AA-E303C1E4F602", 696, 1318077760, "392904", 1318077760, "392904", "{\n}", "Liberty Pool", "173rd Street and 106th Avenue", "Bathrooms" ]
+, [ 697, "E7C9FF4D-F089-4B02-B87C-BDA32430EDCD", 697, 1318077760, "392904", 1318077760, "392904", "{\n}", "Ederle Comfort Station", null, "Bathrooms" ]
+, [ 698, "E01A3C5D-13FA-448F-B981-6A573B958BC3", 698, 1318077760, "392904", 1318077760, "392904", "{\n}", "Rockaway Beach 86 Comfort Station", "Beach 86 Street", "Bathrooms" ]
+, [ 699, "AE4CAAD0-6A4F-4466-9CEF-044A8E3364E7", 699, 1318077760, "392904", 1318077760, "392904", "{\n}", "Rockaway Beach 97 Comfort Station", "Beach 97 Street", "Bathrooms" ]
+, [ 700, "ADE34B9E-AE19-473C-B906-8E9594D7A17E", 700, 1318077760, "392904", 1318077760, "392904", "{\n}", "Rockaway Beach 106 Comfort Station", "Beach 106 Street", "Bathrooms" ]
+, [ 701, "00BF1417-DC47-4DC3-92FD-908245DC31A9", 701, 1318077760, "392904", 1318077760, "392904", "{\n}", "Rockaway Beach 117th L/G", "Beach 117 Street", "Bathrooms" ]
+, [ 702, "B1B27A16-2401-4AE1-B188-9571DFC1C4B1", 702, 1318077760, "392904", 1318077760, "392904", "{\n}", "Bloomingdale Park", "Richmond Pkwy, Bloomingdale Rd., Lenevar Ave", "Bathrooms" ]
+, [ 703, "42427BA1-2A64-4EC1-B954-481ADFE0400C", 703, 1318077760, "392904", 1318077760, "392904", "{\n}", "Conference House Park", "Pittsville St,Hylan Blvd.,Surf,Richard Aves", "Bathrooms" ]
+, [ 704, "6ED55F00-6792-479E-A961-BBD1D54C9888", 704, 1318077760, "392904", 1318077760, "392904", "{\n}", "South Beach Wetlands", "Quintard St Bet. Quincy Ave & Father Capodanno Blvd", "Bathrooms" ]
+ ]
+}
