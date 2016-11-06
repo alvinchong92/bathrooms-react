@@ -25,12 +25,6 @@ export default class PostItem extends React.Component {
     this.setState({ newContent })
   }
   render() {
-    // if(this.state.modalOpen) {
-    //   return (<div> one div </div>);
-    // } else {
-    //   return (<a onClick= {this.handleClick}> press me </a> )
-    // }
-    // <button className="button" onClick={this.handleEditofContent}> New shit </button>
     const body = this.props.body;
     return(
       <div>

@@ -9,7 +9,10 @@
  class App extends React.Component {
    constructor(props) {
      super(props);
-     this.state = { posts: [], spots: [] };
+     this.state = {
+      posts: [],
+      spots: [],
+      };
      this.logIn = this.logIn.bind(this);
      this.signUp = this.signUp.bind(this);
      this.signOut = this.signOut.bind(this);
@@ -25,8 +28,8 @@
      this.updateAuth();
      if (cookie.load('token')) {
        this.getCurrentUserPosts();
-       this.getData();
      }
+     this.getData();
    }
 
   getData() {
@@ -148,9 +151,14 @@
        );
      } else {
        userDisplayElement = (
-         <div id="User-Container">
-           <UserForm handleSubmit={this.signUp} buttonText="Sign-Up" />
-           <UserForm handleSubmit={this.logIn} buttonText="Log-In" />
+         <div>
+          <header className="clearfix" id="navigation">
+            <logo> DEUCES 💩 </logo>
+              <nav>
+                <UserForm handleSubmit={this.signUp} buttonText="Sign-Up" />
+                <UserForm handleSubmit={this.logIn} buttonText="Log-In" />
+              </nav>
+           </header>
           <footer className="footer"> </footer>
          </div>
        );

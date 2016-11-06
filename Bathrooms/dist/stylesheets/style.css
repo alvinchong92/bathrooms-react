@@ -1,3 +1,38 @@
 body {
-  background-color: lightblue;
+  background-image: url('https://images.unsplash.com/photo-1429637119272-20043840c013?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&s=5381bd5092beba8cd5b9e30c10c12ebe');
+  background-repeat: no-repeat;
+  background
+}
+
+logo {
+  font-size: 2em;
+  font-weight: bold;
+  color: black;
+  letter-spacing: 2px;
+  font-style: bold;
+  font-family: 'Open Sans', sans-serif;
+  padding: 0.6em;
+  float: left;
+}
+
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  content: " ";
+  font-size: 0;
+  clear:both;
+  height: 0;
+}
+
+nav {
+  font-size: 1.2em;
+  float: right;
+  padding: 0.6em;
+  margin-right: 1em;
+}
+
+#first-input {
+  width: 408px;
+  height: 60px;
+  margin: 1em;
 }

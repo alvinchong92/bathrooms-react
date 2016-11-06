@@ -8,9 +8,6 @@ export default class ThirdView extends React.Component {
   constructor(props) {
     super(props)
      this.state = { posts: [] };
-     this.logIn = this.logIn.bind(this);
-     this.signUp = this.signUp.bind(this);
-     this.signOut = this.signOut.bind(this);
      this.sendPost = this.sendPost.bind(this);
      this.deletePost = this.deletePost.bind(this);
      this.handlePublish = this.handlePublish.bind(this);
@@ -18,9 +15,9 @@ export default class ThirdView extends React.Component {
      this.handlePublishPost = this.handlePublishPost.bind(this);
   }
 
-   componentDidMount() {
-       this.getCurrentUserPosts();
-     }
+  componentDidMount() {
+      this.getCurrentUserPosts();
+  }
 
   getCurrentUserPosts() {
     request.get('/api/posts')
@@ -37,7 +34,7 @@ export default class ThirdView extends React.Component {
             }
           })
         }
-        this.setState({ posts });
+        this.setState({ posts: posts });
       })
   }
   sendPost({ body }) {
@@ -77,29 +74,6 @@ export default class ThirdView extends React.Component {
            .then(() => {
             this.getCurrentUserPosts();
            })
-   }
-
-   signOut() {
-     request.post('/api/signout')
-            .then(() => this.updateAuth());
-   }
-
-   logIn(userDetails) {
-     request.post('/api/login')
-          .send(userDetails)
-          .then(() => {
-            this.updateAuth();
-            this.getCurrentUserPosts();
-          });
-   }
-   signUp(userDetails) {
-    console.log(userDetails)
-     request.post('/api/signup')
-           .send(userDetails)
-           .then(() => {
-             this.updateAuth();
-             this.getCurrentUserPosts();
-           });
    }
 
   render() {

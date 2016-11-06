@@ -44,15 +44,15 @@ export default class Map extends React.Component {
       setMap: 'map',
     });
 
-    // this.marker = new google.maps.Marker({
-    //   map: this.map,
-    //   position: {
-    //     lat: INITIAL_LOCATION.lat,
-    //     lng: INITIAL_LOCATION.lng
-    //   },
-    //   draggable: true,
-    //   animation: google.maps.Animation.DROP
-    // });
+    this.marker = new google.maps.Marker({
+      map: this.map,
+      position: {
+        lat: INITIAL_LOCATION.lat,
+        lng: INITIAL_LOCATION.lng
+      },
+      draggable: true,
+      animation: google.maps.Animation.DROP
+    });
 
     this.geocoder = new google.maps.Geocoder();
     this.geocodeLocation();
@@ -97,6 +97,7 @@ export default class Map extends React.Component {
 
   geocodeLocation() {
     let location = this.props.spots;
+    let image = 'http://pix.iemoji.com/images/emoji/apple/ios-9/33/0566.png'
     console.log(this.props)
     for(let i=0; i < 10; i++) {
       setTimeout(() => {
@@ -107,7 +108,8 @@ export default class Map extends React.Component {
                 map: this.map,
                 position: results[0].geometry.location,
                 animation: google.maps.Animation.DROP,
-                title: results[0].formatted_address
+                title: results[0].formatted_address,
+                icon: image
               });
              this.marker.addListener('click', function() {
               console.log('click')

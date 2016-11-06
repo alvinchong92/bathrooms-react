@@ -6,6 +6,7 @@ import NextView from '../Views/NextView.jsx';
   constructor(props) {
     super(props);
     this.state ={
+      posts: this.props.posts || [],
       spots: this.props.spots || '',
       localContent: this.props.content || '',
       linktoSearch: false,
@@ -31,7 +32,6 @@ import NextView from '../Views/NextView.jsx';
     this.setState({
       linktoSearch: true
     })
-    // this.props.router.push('NextView')
   }
 
   render() {
@@ -41,11 +41,12 @@ import NextView from '../Views/NextView.jsx';
         <NextView
         Content = {this.state.localContent}
         Spots={this.state.spots}
+        Posts={this.state.posts}
         />:
         <div>
           <h1> This is the first View </h1>
          <form onSubmit={this.handleSubmit}>
-         <input
+         <input id="first-input"
          type="text"
          placeholder="Enter a location"
          onChange={this.handleChange}

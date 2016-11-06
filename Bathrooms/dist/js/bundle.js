@@ -26426,7 +26426,10 @@
 	
 	    var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
 	
-	    _this.state = { posts: [], spots: [] };
+	    _this.state = {
+	      posts: [],
+	      spots: []
+	    };
 	    _this.logIn = _this.logIn.bind(_this);
 	    _this.signUp = _this.signUp.bind(_this);
 	    _this.signOut = _this.signOut.bind(_this);
@@ -26445,8 +26448,8 @@
 	      this.updateAuth();
 	      if (_reactCookie2.default.load('token')) {
 	        this.getCurrentUserPosts();
-	        this.getData();
 	      }
+	      this.getData();
 	    }
 	  }, {
 	    key: 'getData',
@@ -26610,9 +26613,22 @@
 	      } else {
 	        userDisplayElement = _react2.default.createElement(
 	          'div',
-	          { id: 'User-Container' },
-	          _react2.default.createElement(_UserForm2.default, { handleSubmit: this.signUp, buttonText: 'Sign-Up' }),
-	          _react2.default.createElement(_UserForm2.default, { handleSubmit: this.logIn, buttonText: 'Log-In' }),
+	          null,
+	          _react2.default.createElement(
+	            'header',
+	            { className: 'clearfix', id: 'navigation' },
+	            _react2.default.createElement(
+	              'logo',
+	              null,
+	              ' DEUCES \uD83D\uDCA9 '
+	            ),
+	            _react2.default.createElement(
+	              'nav',
+	              null,
+	              _react2.default.createElement(_UserForm2.default, { handleSubmit: this.signUp, buttonText: 'Sign-Up' }),
+	              _react2.default.createElement(_UserForm2.default, { handleSubmit: this.logIn, buttonText: 'Log-In' })
+	            )
+	          ),
 	          _react2.default.createElement(
 	            'footer',
 	            { className: 'footer' },
@@ -28575,6 +28591,7 @@
 	    var _this = _possibleConstructorReturn(this, (FrontView.__proto__ || Object.getPrototypeOf(FrontView)).call(this, props));
 	
 	    _this.state = {
+	      posts: _this.props.posts || [],
 	      spots: _this.props.spots || '',
 	      localContent: _this.props.content || '',
 	      linktoSearch: false
@@ -28606,7 +28623,6 @@
 	      this.setState({
 	        linktoSearch: true
 	      });
-	      // this.props.router.push('NextView')
 	    }
 	  }, {
 	    key: 'render',
@@ -28616,7 +28632,8 @@
 	        null,
 	        this.state.linktoSearch ? _react2.default.createElement(_NextView2.default, {
 	          Content: this.state.localContent,
-	          Spots: this.state.spots
+	          Spots: this.state.spots,
+	          Posts: this.state.posts
 	        }) : _react2.default.createElement(
 	          'div',
 	          null,
@@ -28716,7 +28733,11 @@
 	
 	    var _this = _possibleConstructorReturn(this, (NextView.__proto__ || Object.getPrototypeOf(NextView)).call(this, props));
 	
-	    _this.state = { spots: _this.props.Spots || [], localContent: _this.props.Content || '' };
+	    _this.state = { spots: _this.props.Spots || ['19 Kenmare St'],
+	      localContent: _this.props.Content || '',
+	      posts: _this.props.Posts || '',
+	      linktoSearch: false
+	    };
 	    _this.handleSubmit = _this.handleSubmit.bind(_this);
 	    return _this;
 	  }
@@ -28726,40 +28747,14 @@
 	    value: function componentWillReceiveProps(nextProps) {
 	      this.setState({
 	        localContent: nextProps.content || '',
-	        spots: nextProps.spots || ''
-	      });
-	    }
-	  }, {
-	    key: 'componentDidMount',
-	    value: function componentDidMount() {
-	      this.getData();
-	    }
-	  }, {
-	    key: 'getData',
-	    value: function getData() {
-	      var _this2 = this;
-	
-	      var spots = [];
-	      fetch("bathroom.json").then(function (response) {
-	        if (response.ok) {
-	          response.json().then(function (results) {
-	            results.data.map(function (newData) {
-	              var y = newData[9];
-	              if (y != null) {
-	                spots.push(y);
-	              }
-	            });
-	          });
-	          _this2.setState({
-	            spots: spots
-	          });
-	        }
+	        spots: nextProps.spots || '',
+	        posts: nextProps.posts || ''
 	      });
 	    }
 	  }, {
 	    key: 'handleSubmit',
 	    value: function handleSubmit() {
-	      this.props.router.push('ThirdView');
+	      this.props.router.push('thirdview');
 	    }
 	  }, {
 	    key: 'render',
@@ -28772,12 +28767,15 @@
 	          null,
 	          ' Great this is the 2nd View '
 	        ),
-	        this.state.spots,
-	        _react2.default.createElement(_map2.default, { spots: this.state.spots, content: this.props.Content }),
 	        _react2.default.createElement(
-	          'button',
-	          { onClick: this.handleSubmit },
-	          ' Click '
+	          'div',
+	          null,
+	          _react2.default.createElement(_map2.default, { spots: this.state.spots, content: this.props.Content }),
+	          _react2.default.createElement(
+	            'button',
+	            { onClick: this.handleSubmit },
+	            ' Click '
+	          )
 	        )
 	      );
 	    }
@@ -28864,15 +28862,15 @@
 	        setMap: 'map'
 	      });
 	
-	      // this.marker = new google.maps.Marker({
-	      //   map: this.map,
-	      //   position: {
-	      //     lat: INITIAL_LOCATION.lat,
-	      //     lng: INITIAL_LOCATION.lng
-	      //   },
-	      //   draggable: true,
-	      //   animation: google.maps.Animation.DROP
-	      // });
+	      this.marker = new google.maps.Marker({
+	        map: this.map,
+	        position: {
+	          lat: INITIAL_LOCATION.lat,
+	          lng: INITIAL_LOCATION.lng
+	        },
+	        draggable: true,
+	        animation: google.maps.Animation.DROP
+	      });
 	
 	      this.geocoder = new google.maps.Geocoder();
 	      this.geocodeLocation();
@@ -28925,6 +28923,7 @@
 	      var _this3 = this;
 	
 	      var location = this.props.spots;
+	      var image = 'http://pix.iemoji.com/images/emoji/apple/ios-9/33/0566.png';
 	      console.log(this.props);
 	
 	      var _loop = function _loop(i) {
@@ -28936,7 +28935,8 @@
 	                map: this.map,
 	                position: results[0].geometry.location,
 	                animation: google.maps.Animation.DROP,
-	                title: results[0].formatted_address
+	                title: results[0].formatted_address,
+	                icon: image
 	              });
 	              this.marker.addListener('click', function () {
 	                console.log('click');
@@ -33538,9 +33538,6 @@
 	    var _this = _possibleConstructorReturn(this, (ThirdView.__proto__ || Object.getPrototypeOf(ThirdView)).call(this, props));
 	
 	    _this.state = { posts: [] };
-	    _this.logIn = _this.logIn.bind(_this);
-	    _this.signUp = _this.signUp.bind(_this);
-	    _this.signOut = _this.signOut.bind(_this);
 	    _this.sendPost = _this.sendPost.bind(_this);
 	    _this.deletePost = _this.deletePost.bind(_this);
 	    _this.handlePublish = _this.handlePublish.bind(_this);
@@ -33628,36 +33625,6 @@
 	
 	      _superagent2.default.post('/api/posts/' + id).send({ content: content }).then(function () {
 	        _this6.getCurrentUserPosts();
-	      });
-	    }
-	  }, {
-	    key: 'signOut',
-	    value: function signOut() {
-	      var _this7 = this;
-	
-	      _superagent2.default.post('/api/signout').then(function () {
-	        return _this7.updateAuth();
-	      });
-	    }
-	  }, {
-	    key: 'logIn',
-	    value: function logIn(userDetails) {
-	      var _this8 = this;
-	
-	      _superagent2.default.post('/api/login').send(userDetails).then(function () {
-	        _this8.updateAuth();
-	        _this8.getCurrentUserPosts();
-	      });
-	    }
-	  }, {
-	    key: 'signUp',
-	    value: function signUp(userDetails) {
-	      var _this9 = this;
-	
-	      console.log(userDetails);
-	      _superagent2.default.post('/api/signup').send(userDetails).then(function () {
-	        _this9.updateAuth();
-	        _this9.getCurrentUserPosts();
 	      });
 	    }
 	  }, {
@@ -33835,12 +33802,6 @@
 	  }, {
 	    key: 'render',
 	    value: function render() {
-	      // if(this.state.modalOpen) {
-	      //   return (<div> one div </div>);
-	      // } else {
-	      //   return (<a onClick= {this.handleClick}> press me </a> )
-	      // }
-	      // <button className="button" onClick={this.handleEditofContent}> New shit </button>
 	      var body = this.props.body;
 	      return _react2.default.createElement(
 	        'div',
