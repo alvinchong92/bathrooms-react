@@ -28,7 +28,6 @@ export default class Map extends React.Component {
       lat: null,
       lng: null
     }
-    this.panToArcDeTriomphe = this.panToArcDeTriomphe.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.setSearchInputElementReference = this.setSearchInputElementReference.bind(this);
     this.getCurrentPosition = this.getCurrentPosition.bind(this);
@@ -41,19 +40,20 @@ export default class Map extends React.Component {
       setMap: 'map',
     });
 
-    this.marker = new google.maps.Marker({
-      map: this.map,
-      position: {
-        lat: INITIAL_LOCATION.lat,
-        lng: INITIAL_LOCATION.lng
-      },
-      draggable: true,
-      animation: google.maps.Animation.DROP
-    });
+    // this.marker = new google.maps.Marker({
+    //   map: this.map,
+    //   position: {
+    //     lat: INITIAL_LOCATION.lat,
+    //     lng: INITIAL_LOCATION.lng
+    //   },
+    //   draggable: true,
+    //   animation: google.maps.Animation.DROP
+    // });
 
     this.geocoder = new google.maps.Geocoder();
     // this.geocodeLocation();
     this.getCurrentPosition();
+    this.panLocationEnter();
   }
 
   getCurrentPosition() {
@@ -92,7 +92,8 @@ export default class Map extends React.Component {
   }
 
   geocodeLocation() {
-    let location = this.props.x;
+    let location = this.props.spots;
+    console.log(this.props)
     for(let i=0; i < 10; i++) {
       setTimeout(() => {
         (this.geocoder.geocode({ 'address': location[i] }, function handleResults(results, status) {
@@ -152,9 +153,9 @@ export default class Map extends React.Component {
     }.bind(this));
   }
 
-  panToArcDeTriomphe() {
-    this.map.panTo(ARC_DE_TRIOMPHE_POSITION);
-    this.marker.setPosition(ARC_DE_TRIOMPHE_POSITION)
+  panLocationEnter() {
+    console.log(this.props.content)
+    console.log(this.props)
   }
 
 
@@ -168,7 +169,6 @@ export default class Map extends React.Component {
       <div className="container">
         <div className="row">
           <div className="col-sm-12">
-           <button id="button" onClick={this.panToArcDeTriomphe}>Go to Arc De Triomphe</button>
               <form className="form-inline" onSubmit={this.handleSubmit}>
                 <div className="row">
                   <div className="col-xs-8 col-sm-10">

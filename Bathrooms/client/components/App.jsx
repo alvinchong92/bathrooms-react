@@ -3,16 +3,13 @@
  import cookie from 'react-cookie';
  import FrontView from './Views/FrontView.jsx';
  import UserForm from './user/UserForm.jsx';
- import Map from './map/map.jsx';
- import PostForm from './posts/PostForm.jsx';
- import PostList from './posts/PostList.jsx';
 
  const propTypes = {};
 
  class App extends React.Component {
    constructor(props) {
      super(props);
-     this.state = { posts: [], x: [] };
+     this.state = { posts: [] };
      this.logIn = this.logIn.bind(this);
      this.signUp = this.signUp.bind(this);
      this.signOut = this.signOut.bind(this);
@@ -28,28 +25,8 @@
      this.updateAuth();
      if (cookie.load('token')) {
        this.getCurrentUserPosts();
-       this.getData();
      }
    }
-
-  getData() {
-    let x = [];
-    fetch("bathroom.json").then((response) => {
-      if(response.ok) {
-        response.json().then((results) => {
-          results.data.map((newData) => {
-            let y = newData[9];
-            if( y != null) {
-            x.push(y);
-            }
-          })
-        })
-      }
-    })
-    this.setState({
-      x: x
-    });
-  }
 
    getCurrentUserPosts() {
      request.get('/api/posts')
@@ -144,6 +121,7 @@
            <button id="Log-Out" onClick={this.signOut} >Log-Out!</button>
            <FrontView />
            <footer className="footer"> </footer>
+            {this.props.children}
          </div>
        );
      } else {
