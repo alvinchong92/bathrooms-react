@@ -6,6 +6,7 @@ import NextView from '../Views/NextView.jsx';
   constructor(props) {
     super(props);
     this.state ={
+      spots: this.props.spots || '',
       localContent: this.props.content || '',
       linktoSearch: false,
     };
@@ -39,6 +40,7 @@ import NextView from '../Views/NextView.jsx';
       {this.state.linktoSearch ?
         <NextView
         Content = {this.state.localContent}
+        Spots={this.state.spots}
         />:
         <div>
           <h1> This is the first View </h1>

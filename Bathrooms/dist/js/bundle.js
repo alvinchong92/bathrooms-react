@@ -26426,7 +26426,7 @@
 	
 	    var _this = _possibleConstructorReturn(this, (App.__proto__ || Object.getPrototypeOf(App)).call(this, props));
 	
-	    _this.state = { posts: [] };
+	    _this.state = { posts: [], spots: [] };
 	    _this.logIn = _this.logIn.bind(_this);
 	    _this.signUp = _this.signUp.bind(_this);
 	    _this.signOut = _this.signOut.bind(_this);
@@ -26445,12 +26445,37 @@
 	      this.updateAuth();
 	      if (_reactCookie2.default.load('token')) {
 	        this.getCurrentUserPosts();
+	        this.getData();
 	      }
+	    }
+	  }, {
+	    key: 'getData',
+	    value: function getData() {
+	      var _this2 = this;
+	
+	      var spots = [];
+	      fetch("bathroom.json").then(function (response) {
+	        if (response.ok) {
+	          response.json().then(function (results) {
+	            results.data.map(function (newData) {
+	              var y = newData[9];
+	              if (y != null) {
+	                _this2.state.spots.push(y);
+	              }
+	            });
+	          });
+	        } else {
+	          console.log("problem");
+	        }
+	      });
+	      this.setState({
+	        spots: spots
+	      });
 	    }
 	  }, {
 	    key: 'getCurrentUserPosts',
 	    value: function getCurrentUserPosts() {
-	      var _this2 = this;
+	      var _this3 = this;
 	
 	      _superagent2.default.get('/api/posts').then(function (response) {
 	        var postData = response.body;
@@ -26464,29 +26489,29 @@
 	            };
 	          });
 	        }
-	        _this2.setState({ posts: posts });
+	        _this3.setState({ posts: posts });
 	      }).catch(function () {
-	        _this2.updateAuth();
+	        _this3.updateAuth();
 	      });
 	    }
 	  }, {
 	    key: 'sendPost',
 	    value: function sendPost(_ref) {
-	      var _this3 = this;
+	      var _this4 = this;
 	
 	      var body = _ref.body;
 	
 	      _superagent2.default.post('/api/posts').send({ body: body }).then(function () {
-	        _this3.getCurrentUserPosts();
+	        _this4.getCurrentUserPosts();
 	      });
 	    }
 	  }, {
 	    key: 'deletePost',
 	    value: function deletePost(id) {
-	      var _this4 = this;
+	      var _this5 = this;
 	
 	      _superagent2.default.del('/api/posts/' + id).then(function () {
-	        _this4.getCurrentUserPosts();
+	        _this5.getCurrentUserPosts();
 	      });
 	    }
 	  }, {
@@ -26504,33 +26529,33 @@
 	  }, {
 	    key: 'updatePost',
 	    value: function updatePost(_ref3) {
-	      var _this5 = this;
+	      var _this6 = this;
 	
 	      var id = _ref3.id,
 	          content = _ref3.content;
 	
 	      _superagent2.default.patch('/api/post/' + id).send({ content: content }).then(function () {
-	        _this5.getCurrentUserPosts();
+	        _this6.getCurrentUserPosts();
 	      });
 	    }
 	  }, {
 	    key: 'handlePublishPost',
 	    value: function handlePublishPost(_ref4) {
-	      var _this6 = this;
+	      var _this7 = this;
 	
 	      var content = _ref4.content;
 	
 	      _superagent2.default.post('/api/posts/' + id).send({ content: content }).then(function () {
-	        _this6.getCurrentUserPosts();
+	        _this7.getCurrentUserPosts();
 	      });
 	    }
 	  }, {
 	    key: 'signOut',
 	    value: function signOut() {
-	      var _this7 = this;
+	      var _this8 = this;
 	
 	      _superagent2.default.post('/api/signout').then(function () {
-	        return _this7.updateAuth();
+	        return _this8.updateAuth();
 	      });
 	    }
 	  }, {
@@ -26543,22 +26568,22 @@
 	  }, {
 	    key: 'logIn',
 	    value: function logIn(userDetails) {
-	      var _this8 = this;
+	      var _this9 = this;
 	
 	      _superagent2.default.post('/api/login').send(userDetails).then(function () {
-	        _this8.updateAuth();
-	        _this8.getCurrentUserPosts();
+	        _this9.updateAuth();
+	        _this9.getCurrentUserPosts();
 	      });
 	    }
 	  }, {
 	    key: 'signUp',
 	    value: function signUp(userDetails) {
-	      var _this9 = this;
+	      var _this10 = this;
 	
 	      console.log(userDetails);
 	      _superagent2.default.post('/api/signup').send(userDetails).then(function () {
-	        _this9.updateAuth();
-	        _this9.getCurrentUserPosts();
+	        _this10.updateAuth();
+	        _this10.getCurrentUserPosts();
 	      });
 	    }
 	  }, {
@@ -26574,7 +26599,7 @@
 	            { id: 'Log-Out', onClick: this.signOut },
 	            'Log-Out!'
 	          ),
-	          _react2.default.createElement(_FrontView2.default, null),
+	          _react2.default.createElement(_FrontView2.default, { posts: this.state.posts, spots: this.state.spots }),
 	          _react2.default.createElement(
 	            'footer',
 	            { className: 'footer' },
@@ -28550,6 +28575,7 @@
 	    var _this = _possibleConstructorReturn(this, (FrontView.__proto__ || Object.getPrototypeOf(FrontView)).call(this, props));
 	
 	    _this.state = {
+	      spots: _this.props.spots || '',
 	      localContent: _this.props.content || '',
 	      linktoSearch: false
 	    };
@@ -28589,7 +28615,8 @@
 	        'div',
 	        null,
 	        this.state.linktoSearch ? _react2.default.createElement(_NextView2.default, {
-	          Content: this.state.localContent
+	          Content: this.state.localContent,
+	          Spots: this.state.spots
 	        }) : _react2.default.createElement(
 	          'div',
 	          null,
@@ -28689,7 +28716,7 @@
 	
 	    var _this = _possibleConstructorReturn(this, (NextView.__proto__ || Object.getPrototypeOf(NextView)).call(this, props));
 	
-	    _this.state = { spots: ['19 Kenmare St, NY'], localContent: _this.props.Content || '' };
+	    _this.state = { spots: _this.props.Spots || [], localContent: _this.props.Content || '' };
 	    _this.handleSubmit = _this.handleSubmit.bind(_this);
 	    return _this;
 	  }
@@ -28698,7 +28725,8 @@
 	    key: 'componentWillReceiveProps',
 	    value: function componentWillReceiveProps(nextProps) {
 	      this.setState({
-	        localContent: nextProps.content || ''
+	        localContent: nextProps.content || '',
+	        spots: nextProps.spots || ''
 	      });
 	    }
 	  }, {
@@ -28709,28 +28737,24 @@
 	  }, {
 	    key: 'getData',
 	    value: function getData() {
-	      var x = [];
+	      var _this2 = this;
+	
+	      var spots = [];
 	      fetch("bathroom.json").then(function (response) {
 	        if (response.ok) {
 	          response.json().then(function (results) {
 	            results.data.map(function (newData) {
 	              var y = newData[9];
 	              if (y != null) {
-	                x.push(y);
+	                spots.push(y);
 	              }
 	            });
 	          });
-	        } else {
-	          console.log("problem");
+	          _this2.setState({
+	            spots: spots
+	          });
 	        }
 	      });
-	      console.log(x);
-	      this.setState({
-	        spots: x
-	      });
-	      console.log(this.state.spots);
-	      console.log(this.props);
-	      console.log(this.props.Content);
 	    }
 	  }, {
 	    key: 'handleSubmit',
@@ -28748,6 +28772,7 @@
 	          null,
 	          ' Great this is the 2nd View '
 	        ),
+	        this.state.spots,
 	        _react2.default.createElement(_map2.default, { spots: this.state.spots, content: this.props.Content }),
 	        _react2.default.createElement(
 	          'button',
@@ -28816,14 +28841,17 @@
 	    var _this = _possibleConstructorReturn(this, (Map.__proto__ || Object.getPrototypeOf(Map)).call(this, props));
 	
 	    _this.state = {
+	      spots: [],
 	      foundAddress: INITIAL_LOCATION.address,
 	      isGeocodingError: false,
 	      lat: null,
-	      lng: null
+	      lng: null,
+	      localContent: _this.props.Content || ''
 	    };
 	    _this.handleSubmit = _this.handleSubmit.bind(_this);
 	    _this.setSearchInputElementReference = _this.setSearchInputElementReference.bind(_this);
 	    _this.getCurrentPosition = _this.getCurrentPosition.bind(_this);
+	    _this.panLocationEnter = _this.panLocationEnter.bind(_this);
 	    return _this;
 	  }
 	
@@ -28832,7 +28860,7 @@
 	    value: function componentDidMount() {
 	      this.map = new google.maps.Map(document.querySelector('#map'), {
 	        center: INITIAL_LOCATION,
-	        zoom: 10,
+	        zoom: 18,
 	        setMap: 'map'
 	      });
 	
@@ -28847,7 +28875,7 @@
 	      // });
 	
 	      this.geocoder = new google.maps.Geocoder();
-	      // this.geocodeLocation();
+	      this.geocodeLocation();
 	      this.getCurrentPosition();
 	      this.panLocationEnter();
 	    }
@@ -28964,8 +28992,40 @@
 	  }, {
 	    key: 'panLocationEnter',
 	    value: function panLocationEnter() {
-	      console.log(this.props.content);
-	      console.log(this.props);
+	      var enterLocation = this.props.content;
+	
+	      this.geocodeFirstLocation(enterLocation);
+	    }
+	  }, {
+	    key: 'geocodeFirstLocation',
+	    value: function geocodeFirstLocation(enterLocation) {
+	      this.geocoder.geocode({ 'address': enterLocation }, function handleResults(results, status) {
+	        if (status === google.maps.GeocoderStatus.OK) {
+	          this.setState({
+	            foundAddress: results[0].formatted_address,
+	            isGeocodingError: false
+	          });
+	          this.map.setCenter(results[0].geometry.location);
+	          this.marker.setPosition(results[0].geometry.location);
+	          this.map.panTo(results[0].geometry.location);
+	
+	          return;
+	        }
+	
+	        this.setState({
+	          foundAddress: null,
+	          isGeocodingError: true
+	        });
+	        this.map.setCenter({
+	          lat: ATLANTIC_OCEAN.lat,
+	          lng: ATLANTIC_OCEAN.lng
+	        });
+	
+	        this.marker.setPosition({
+	          lat: ATLANTIC_OCEAN.lat,
+	          lng: ATLANTIC_OCEAN.lng
+	        });
+	      }.bind(this));
 	    }
 	  }, {
 	    key: 'render',

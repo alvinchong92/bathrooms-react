@@ -19,24 +19,28 @@ const ATLANTIC_OCEAN = {
   lng: -55.49
 }
 
+
 export default class Map extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      spots: [],
       foundAddress: INITIAL_LOCATION.address,
       isGeocodingError: false,
       lat: null,
-      lng: null
+      lng: null,
+      localContent: this.props.Content || ''
     }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.setSearchInputElementReference = this.setSearchInputElementReference.bind(this);
     this.getCurrentPosition = this.getCurrentPosition.bind(this);
+    this.panLocationEnter = this.panLocationEnter.bind(this);
   }
 
   componentDidMount() {
     this.map = new google.maps.Map(document.querySelector('#map'), {
       center: INITIAL_LOCATION,
-      zoom: 10,
+      zoom: 18,
       setMap: 'map',
     });
 
@@ -51,7 +55,7 @@ export default class Map extends React.Component {
     // });
 
     this.geocoder = new google.maps.Geocoder();
-    // this.geocodeLocation();
+    this.geocodeLocation();
     this.getCurrentPosition();
     this.panLocationEnter();
   }
@@ -132,7 +136,7 @@ export default class Map extends React.Component {
         })
         this.map.setCenter(results[0].geometry.location);
         this.marker.setPosition(results[0].geometry.location);
-        this.map.panTo(results[0].geometry.location)
+        this.map.panTo(results[0].geometry.location);
 
         return;
       }
@@ -154,8 +158,39 @@ export default class Map extends React.Component {
   }
 
   panLocationEnter() {
-    console.log(this.props.content)
-    console.log(this.props)
+    let enterLocation = this.props.content;
+
+    this.geocodeFirstLocation(enterLocation);
+  }
+
+  geocodeFirstLocation(enterLocation) {
+    this.geocoder.geocode({ 'address': enterLocation }, function handleResults(results, status) {
+      if (status === google.maps.GeocoderStatus.OK) {
+        this.setState ({
+          foundAddress: results[0].formatted_address,
+          isGeocodingError: false
+        })
+        this.map.setCenter(results[0].geometry.location);
+        this.marker.setPosition(results[0].geometry.location);
+        this.map.panTo(results[0].geometry.location);
+
+        return;
+      }
+
+      this.setState({
+        foundAddress: null,
+        isGeocodingError: true
+      })
+      this.map.setCenter({
+        lat: ATLANTIC_OCEAN.lat,
+        lng: ATLANTIC_OCEAN.lng
+      });
+
+      this.marker.setPosition({
+        lat: ATLANTIC_OCEAN.lat,
+        lng: ATLANTIC_OCEAN.lng
+      })
+    }.bind(this));
   }
 
 

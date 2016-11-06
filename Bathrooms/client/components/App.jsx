@@ -9,7 +9,7 @@
  class App extends React.Component {
    constructor(props) {
      super(props);
-     this.state = { posts: [] };
+     this.state = { posts: [], spots: [] };
      this.logIn = this.logIn.bind(this);
      this.signUp = this.signUp.bind(this);
      this.signOut = this.signOut.bind(this);
@@ -25,8 +25,30 @@
      this.updateAuth();
      if (cookie.load('token')) {
        this.getCurrentUserPosts();
+       this.getData();
      }
    }
+
+  getData() {
+    let spots = []
+      fetch("bathroom.json").then((response) => {
+        if(response.ok) {
+          response.json().then((results) => {
+            results.data.map((newData) => {
+              let y = newData[9];
+                if( y != null) {
+                  this.state.spots.push(y);
+                }
+              })
+          })
+        } else {
+          console.log("problem")
+        }
+      })
+      this.setState({
+      spots: spots
+      });
+  }
 
    getCurrentUserPosts() {
      request.get('/api/posts')
@@ -119,7 +141,7 @@
        userDisplayElement = (
          <div>
            <button id="Log-Out" onClick={this.signOut} >Log-Out!</button>
-           <FrontView />
+           <FrontView posts={this.state.posts} spots={this.state.spots} />
            <footer className="footer"> </footer>
             {this.props.children}
          </div>

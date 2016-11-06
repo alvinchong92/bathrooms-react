@@ -5,7 +5,7 @@ import Map from '../map/map.jsx';
  class NextView extends React.Component {
   constructor(props) {
     super(props)
-    this.state = { spots: ['19 Kenmare St, NY'], localContent: this.props.Content || '' }
+    this.state = { spots: this.props.Spots || [], localContent: this.props.Content || '' }
     this.handleSubmit = this.handleSubmit.bind(this);
     }
 
@@ -13,6 +13,7 @@ import Map from '../map/map.jsx';
   componentWillReceiveProps(nextProps) {
     this.setState({
       localContent: nextProps.content || '',
+      spots: nextProps.spots || '',
     });
   }
 
@@ -21,29 +22,24 @@ import Map from '../map/map.jsx';
   }
 
   getData() {
-    let x = [];
+    let spots = [];
       fetch("bathroom.json").then((response) => {
         if(response.ok) {
           response.json().then((results) => {
             results.data.map((newData) => {
               let y = newData[9];
                 if( y != null) {
-                  x.push(y);
+                  spots.push(y);
                 }
               })
           })
-        } else {
-          console.log("problem")
-        }
-      })
-      console.log(x)
-      this.setState({
-      spots: x
+        this.setState({
+          spots: spots
       });
-    console.log(this.state.spots)
-    console.log(this.props)
-    console.log(this.props.Content)
+      }
+    })
   }
+
   handleSubmit() {
     this.props.router.push('ThirdView')
   }
@@ -52,6 +48,7 @@ import Map from '../map/map.jsx';
     return(
       <div>
         <h1> Great this is the 2nd View </h1>
+        {this.state.spots}
         <Map spots={this.state.spots} content={this.props.Content} />
         <button onClick={this.handleSubmit}> Click </button>
       </div>
