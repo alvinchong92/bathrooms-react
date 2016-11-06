@@ -146,7 +146,6 @@
            <button id="Log-Out" onClick={this.signOut} >Log-Out!</button>
            <FrontView posts={this.state.posts} spots={this.state.spots} />
            <footer className="footer"> </footer>
-            {this.props.children}
          </div>
        );
      } else {

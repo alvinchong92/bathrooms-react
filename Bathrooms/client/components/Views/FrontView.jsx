@@ -44,20 +44,22 @@ import NextView from '../Views/NextView.jsx';
         Posts={this.state.posts}
         />:
         <div>
-          <h1> This is the first View </h1>
-         <form onSubmit={this.handleSubmit}>
-         <input id="first-input"
+          <div id="front-box">
+          <h2> Where the bathrooms at ? </h2>
+          </div>
+         <form id="first-form" onSubmit={this.handleSubmit}>
+         <input id="input-frontview"
          type="text"
          placeholder="Enter a location"
          onChange={this.handleChange}
          value={this.state.localContent}
          />
-          <button type="submit"> Hit </button>
+          <button type="submit"> SEARCH </button>
         </form>
         </div>
       }
         <div>
-          <ul>
+          <ul id="front-links">
             <ol><Link to="nextview"> Maps</Link> </ol>
             <ol><Link to="thirdview"> Notes</Link> </ol>
           </ul>

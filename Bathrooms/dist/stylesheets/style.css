@@ -1,7 +1,6 @@
 body {
   background-image: url('https://images.unsplash.com/photo-1429637119272-20043840c013?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&s=5381bd5092beba8cd5b9e30c10c12ebe');
   background-repeat: no-repeat;
-  background
 }
 
 logo {
@@ -31,8 +30,33 @@ nav {
   margin-right: 1em;
 }
 
-#first-input {
-  width: 408px;
-  height: 60px;
+#first-form {
+  text-align: center;
+  position: relative;
+  left: 1rem;
+  top: 10rem;
+}
+
+#input-frontview {
+  width: 500px;
+  height: 35px;
   margin: 1em;
+}
+
+#front-box {
+  position: relative;
+  left: 28rem;
+  top: 8rem;
+  display: inline-block;
+  font-family: "Ubuntu", "Helvetica Neue", Arial, Gotham, "Helvetica", sans-serif;
+  font-size: 1em;
+  background: clear;
+  color: #161616;
+}
+
+#front-links {
+  display: inline-flex;
+  position: relative;
+  left: 29rem;
+  top: 9rem;
 }

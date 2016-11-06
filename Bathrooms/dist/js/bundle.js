@@ -26607,8 +26607,7 @@
 	            'footer',
 	            { className: 'footer' },
 	            ' '
-	          ),
-	          this.props.children
+	          )
 	        );
 	      } else {
 	        userDisplayElement = _react2.default.createElement(
@@ -28644,8 +28643,8 @@
 	          ),
 	          _react2.default.createElement(
 	            'form',
-	            { onSubmit: this.handleSubmit },
-	            _react2.default.createElement('input', {
+	            { id: 'first-form', onSubmit: this.handleSubmit },
+	            _react2.default.createElement('input', { id: 'input-frontview',
 	              type: 'text',
 	              placeholder: 'Enter a location',
 	              onChange: this.handleChange,
@@ -28654,7 +28653,7 @@
 	            _react2.default.createElement(
 	              'button',
 	              { type: 'submit' },
-	              ' Hit '
+	              ' SEARCH '
 	            )
 	          )
 	        ),
