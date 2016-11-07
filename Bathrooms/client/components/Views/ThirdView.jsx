@@ -1,43 +1,49 @@
-import React from 'react';
-import request from 'superagent';
-import cookie from 'react-cookie';
-import PostForm from '../posts/PostForm.jsx';
-import PostList from '../posts/PostItem.jsx';
+ import React from 'react';
+ import request from 'superagent';
+ import cookie from 'react-cookie';
+ import UserForm from '../user/UserForm.jsx';
+ import PostList from '../posts/PostList.jsx';
+ import PostForm from '../posts/PostForm.jsx';
 
-export default class ThirdView extends React.Component {
-  constructor(props) {
-    super(props)
+ const propTypes = {};
+
+ class App extends React.Component {
+   constructor(props) {
+     super(props);
      this.state = { posts: [] };
      this.sendPost = this.sendPost.bind(this);
      this.deletePost = this.deletePost.bind(this);
      this.handlePublish = this.handlePublish.bind(this);
      this.updatePost = this.updatePost.bind(this);
      this.handlePublishPost = this.handlePublishPost.bind(this);
-  }
-
-  componentDidMount() {
-      this.getCurrentUserPosts();
-  }
-
-  getCurrentUserPosts() {
-    request.get('/api/posts')
-      .then((response) => {
-        console.log(response)
-        const postData = response.body;
-        let posts = [];
-        if(postData) {
-          posts = Object.keys(postData).map((id) => {
-            const individualPostData = postData[id];
-            return {
-              id: individualPostData.id,
-              body: individualPostData.body,
-            }
-          })
-        }
-        this.setState({ posts: posts });
-      })
-  }
-  sendPost({ body }) {
+   }
+   componentDidMount() {
+     this.updateAuth();
+     if (cookie.load('token')) {
+       this.getCurrentUserPosts();
+     }
+   }
+   getCurrentUserPosts() {
+     request.get('/api/posts')
+            .then((response) => {
+              const postData = response.body;
+              let posts = [];
+              if(postData) {
+                posts = Object.keys(postData).map((id) => {
+                  const individualPostData = postData[id];
+                  return {
+                    id: individualPostData.id,
+                    body: individualPostData.body,
+                  }
+                })
+              }
+              this.setState({ posts });
+            })
+            .catch(() => {
+              this.updateAuth();
+            });
+   }
+   sendPost({ body }) {
      request.post('/api/posts')
            .send({ body })
            .then(() => {
@@ -76,13 +82,35 @@ export default class ThirdView extends React.Component {
            })
    }
 
-  render() {
-    return(
-      <div>
-        <h2> you are awesome </h2>
-        <PostForm sendPost={this.sendPost} deletePost={this.deletePost} />
-        <PostList posts={this.state.posts} deletePost={this.deletePost} />
-      </div>
-    )
-  }
-}
+   updateAuth() {
+     this.setState({
+       token: cookie.load('token'),
+     });
+   }
+
+   render() {
+     let userDisplayElement;
+     if (this.state.token) {
+       userDisplayElement = (
+         <div>
+           <button id="Log-Out" onClick={this.signOut} >Log-Out!</button>
+           <div id="thirdview-postform">
+           <PostForm sendPost={this.sendPost} deletePost={this.deletePost} handlePublish={this.handlePublish} />
+           </div>
+           <div id="title-display"> Bathrooms </div>
+           <PostList posts={this.state.posts} deletePost={this.deletePost} handlePublish = {this.handlePublish} />
+           <footer className="footer"> </footer>
+         </div>
+       );
+     }
+     return (
+       <div>
+         {userDisplayElement}
+       </div>
+     );
+   }
+ }
+
+ App.propTypes = propTypes;
+
+ export default App;

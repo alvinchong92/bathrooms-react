@@ -8,7 +8,6 @@ const propTypes = {
 
 export default class PostList extends React.Component {
   render() {
-
    const postElements = this.props.posts.map((post,idx) => {
           return (
             <div key = {idx}>

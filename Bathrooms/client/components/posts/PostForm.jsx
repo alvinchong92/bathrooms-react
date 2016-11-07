@@ -38,14 +38,14 @@ export default class PostForm extends React.Component {
     return(
       <div>
         <form id="Post-Form" onSubmit= {this.handleSubmit}>
-          <input
+          <input className="input"
             type="text"
-            placeholder="Post a location."
+            placeholder="Add a bathroom"
             name="body"
             value={this.state.body}
             onChange={this.handleChange}
           />
-          <input type="submit" value="POST"/>
+          <input className="btn" type="submit" value="Add"/>
         </form>
       </div>
     )

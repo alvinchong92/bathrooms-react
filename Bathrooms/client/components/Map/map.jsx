@@ -1,12 +1,6 @@
 import React from 'react';
 import {GoogleMapLoader, GoogleMap, Marker} from "react-google-maps";
 
-const ARC_DE_TRIOMPHE_POSITION = {
-  lat: 48.873947,
-  lng: 2.295038,
-  zoom: 2
-};
-
 const INITIAL_LOCATION = {
   address: 'New York City',
   lat: 40.758608,
@@ -18,7 +12,6 @@ const ATLANTIC_OCEAN = {
   lat: 29.53,
   lng: -55.49
 }
-
 
 export default class Map extends React.Component {
   constructor(props) {

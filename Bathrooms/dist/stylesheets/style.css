@@ -124,4 +124,26 @@ nav {
   color: #161616;
 }
 
+#title-display {
+  left: 28rem;
+  position: relative;
+  font-size: 2rem;
+  font-family: "Ubuntu", "Helvetica Neue", Arial, Gotham, "Helvetica", sans-serif;
+}
+
+#thirdview-postform {
+  position: relative;
+  left: 17rem;
+}
+
+.post-display {
+  font-family: "Ubuntu", "Helvetica Neue", Arial, Gotham, "Helvetica", sans-serif;
+  padding: 1rem;
+  margin: 1rem;
+}
+
+.delete-button{
+  float: right;
+
+}
 

@@ -28,8 +28,8 @@ export default class PostItem extends React.Component {
     const body = this.props.body;
     return(
       <div>
-          <div className="post_display"> {body}
-          <button className="button" onClick={this.handleDeleteClick}> Delete </button>
+          <div className="post-display"> {body}
+          <button className="delete-button" onClick={this.handleDeleteClick}> Delete </button>
         </div>
       </div>
     )
