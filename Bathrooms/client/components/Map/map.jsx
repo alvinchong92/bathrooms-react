@@ -211,9 +211,8 @@ export default class Map extends React.Component {
                   <div className="col-xs-8 col-sm-10">
                     <div className="form-group">
                       <label className="sr-only" htmlFor="address">Address </label>
-                      <input
+                      <input className="input"
                         type="text"
-                        className="form-control input-lg"
                         id="address"
                         placeholder="WHERE ARE YALL GOING?"
                         ref={this.setSearchInputElementReference}

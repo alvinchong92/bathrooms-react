@@ -28,10 +28,9 @@ import Map from '../map/map.jsx';
   render() {
     return(
       <div>
-        <h1> Great this is the 2nd View </h1>
         <div>
         <Map spots={this.state.spots} content={this.props.Content} />
-        <button onClick={this.handleSubmit}> Click </button>
+        <button className="btn" onClick={this.handleSubmit}> Add a bathroom </button>
         </div>
       </div>
     )

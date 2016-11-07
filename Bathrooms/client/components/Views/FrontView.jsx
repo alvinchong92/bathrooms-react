@@ -48,22 +48,16 @@ import NextView from '../Views/NextView.jsx';
           <h2> Where the bathrooms at ? </h2>
           </div>
          <form id="first-form" onSubmit={this.handleSubmit}>
-         <input id="input-frontview"
+         <input className="input"
          type="text"
-         placeholder="Enter a location"
+         placeholder="10 E 21st St, New York, NY 10010"
          onChange={this.handleChange}
          value={this.state.localContent}
          />
-          <button type="submit"> SEARCH </button>
+          <button className="btn" type="submit"> SEARCH </button>
         </form>
         </div>
       }
-        <div>
-          <ul id="front-links">
-            <ol><Link to="nextview"> Maps</Link> </ol>
-            <ol><Link to="thirdview"> Notes</Link> </ol>
-          </ul>
-        </div>
       </div>
     )
   }

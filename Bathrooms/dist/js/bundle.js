@@ -28637,51 +28637,27 @@
 	          'div',
 	          null,
 	          _react2.default.createElement(
-	            'h1',
-	            null,
-	            ' This is the first View '
+	            'div',
+	            { id: 'front-box' },
+	            _react2.default.createElement(
+	              'h2',
+	              null,
+	              ' Where the bathrooms at ? '
+	            )
 	          ),
 	          _react2.default.createElement(
 	            'form',
 	            { id: 'first-form', onSubmit: this.handleSubmit },
-	            _react2.default.createElement('input', { id: 'input-frontview',
+	            _react2.default.createElement('input', { className: 'input',
 	              type: 'text',
-	              placeholder: 'Enter a location',
+	              placeholder: '10 E 21st St, New York, NY 10010',
 	              onChange: this.handleChange,
 	              value: this.state.localContent
 	            }),
 	            _react2.default.createElement(
 	              'button',
-	              { type: 'submit' },
+	              { className: 'btn', type: 'submit' },
 	              ' SEARCH '
-	            )
-	          )
-	        ),
-	        _react2.default.createElement(
-	          'div',
-	          null,
-	          _react2.default.createElement(
-	            'ul',
-	            null,
-	            _react2.default.createElement(
-	              'ol',
-	              null,
-	              _react2.default.createElement(
-	                _reactRouter.Link,
-	                { to: 'nextview' },
-	                ' Maps'
-	              ),
-	              ' '
-	            ),
-	            _react2.default.createElement(
-	              'ol',
-	              null,
-	              _react2.default.createElement(
-	                _reactRouter.Link,
-	                { to: 'thirdview' },
-	                ' Notes'
-	              ),
-	              ' '
 	            )
 	          )
 	        )
@@ -28762,17 +28738,12 @@
 	        'div',
 	        null,
 	        _react2.default.createElement(
-	          'h1',
-	          null,
-	          ' Great this is the 2nd View '
-	        ),
-	        _react2.default.createElement(
 	          'div',
 	          null,
 	          _react2.default.createElement(_map2.default, { spots: this.state.spots, content: this.props.Content }),
 	          _react2.default.createElement(
 	            'button',
-	            { onClick: this.handleSubmit },
+	            { className: 'btn', onClick: this.handleSubmit },
 	            ' Click '
 	          )
 	        )
@@ -29060,9 +29031,8 @@
 	                      { className: 'sr-only', htmlFor: 'address' },
 	                      'Address '
 	                    ),
-	                    _react2.default.createElement('input', {
+	                    _react2.default.createElement('input', { className: 'input',
 	                      type: 'text',
-	                      className: 'form-control input-lg',
 	                      id: 'address',
 	                      placeholder: 'WHERE ARE YALL GOING?',
 	                      ref: this.setSearchInputElementReference,
